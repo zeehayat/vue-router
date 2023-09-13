@@ -4,6 +4,12 @@
     <router-link class='nav-item' to="/about">About</router-link>
     <router-link class='nav-item' :to="{name: 'Jobs'}">Jobs</router-link>
   </div>
+  <div class='btn-group'>
+  <button>Redirect</button>
+  <button>Go Back</button>
+  <button>Forward</button>
+  </div>
+
   <router-view />
 </template>
 
@@ -29,5 +35,9 @@ export default {
   border:1px solid gray;
   text-decoration:none;
   border-radius:5px;
+  border-bottom:none;
+}
+.btn-group{
+  margin:20px;
 }
 </style>
