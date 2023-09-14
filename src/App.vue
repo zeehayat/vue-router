@@ -5,9 +5,9 @@
     <router-link class='nav-item' :to="{name: 'Jobs'}">Jobs</router-link>
   </div>
   <div class='btn-group'>
-  <button>Redirect</button>
-  <button>Go Back</button>
-  <button>Forward</button>
+  <button @click="redirect">Redirect</button>
+  <button @click="back">Go Back</button>
+  <button @click="forward">Forward</button>
   </div>
 
   <router-view />
@@ -17,6 +17,17 @@
 export default {
   name: 'App',
   components: {},
+  methods:{
+    redirect(){
+
+    },
+    forward(){
+
+    },
+    back(){
+      this.$router.back(-1)
+    }
+  }
 };
 </script>
 
@@ -39,5 +50,11 @@ export default {
 }
 .btn-group{
   margin:20px;
+}
+button {
+  margin: 0 10px;
+  padding:10px;
+  border:none;
+  border-radius:4px;
 }
 </style>
