@@ -12,12 +12,14 @@ export default {
   name:'Jobs',
   data(){
     return {
-      jobs:[
-        {title: 'Ninja UI Designer', id:1,description:'Lori'},
-        {title: 'Ninja Web Developer', id:2,description:'Ipsum'},
-        {title: 'Ninja Web Designer', id:3,description:'Dora'},
-      ]
+      jobs:[]
     }
+  },
+  mounted(){
+    fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(res=>res.json())
+    .then(data=>this.jobs=data)
+    .catch(error=>console.log(error.message))
   }
 }
 </script>
